@@ -1,0 +1,9 @@
+sudo : required
+services:
+  - docker
+
+before_install:
+  - docker build -t myImage -f Dockerfie.dev .
+
+script: 
+  - docker run myImage npm run test -- --coverage
